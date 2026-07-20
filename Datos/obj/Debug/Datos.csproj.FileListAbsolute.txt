@@ -1,0 +1,9 @@
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\bin\Debug\Datos.dll
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\bin\Debug\Datos.pdb
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\bin\Debug\Dominio.dll
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\bin\Debug\Dominio.pdb
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\obj\Debug\Datos.csproj.Up2Date
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\obj\Debug\Datos.dll
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\Datos\obj\Debug\Datos.pdb

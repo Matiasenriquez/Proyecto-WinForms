@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Datos/Datos.csproj" Id="3fbdfba6-2f3c-4686-b66f-3f8a39d870f5" />
+  <Project Path="Dominio/Dominio.csproj" Id="b04df1a9-1099-4fe9-b559-9b694d0f3692" />
+  <Project Path="WindowsFormsApp1/Pokemons.csproj" Id="08777ae7-60b8-4e43-8608-f8064741fa28" />
+</Solution>

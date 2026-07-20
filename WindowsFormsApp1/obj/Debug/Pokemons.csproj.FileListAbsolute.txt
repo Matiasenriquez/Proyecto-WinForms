@@ -1,0 +1,15 @@
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Pokemons.csproj.AssemblyReference.cache
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Pokemons.csproj.GenerateResource.cache
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Pokemons.csproj.CoreCompileInputs.cache
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Datos.dll
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Dominio.dll
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Datos.pdb
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Dominio.pdb
+C:\Users\matia\Desktop\Curso-C#-Nivel-2\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Pokemons.csproj.Up2Date
