@@ -56,11 +56,17 @@ namespace WindowsFormsApp1
             {
                 pbxPokemon.Load(imagen);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxPokemon.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
-                throw;
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //invoco a mi ventana de Alta pokemons y con showdialog permite que no se pueda abrir varias ventanas
+            frmAltaPokemon alta = new frmAltaPokemon();
+            alta.ShowDialog();
         }
     }
 }

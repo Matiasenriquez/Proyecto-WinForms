@@ -62,5 +62,29 @@ namespace Datos
                 throw ex;
             }
         }
+
+        public void Agregar(Pokemon nuevo)
+        {
+            //logica para agregar los pokemons a la base de datos.
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetConsulta("INSERT INTO POKEMONS (Numero, Nombre, Descripcion, Activo) VALUES (" + nuevo.Numero +  ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1)");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public void Modificar(Pokemon modificar)
+        {
+
+        }
+
     }
 }
