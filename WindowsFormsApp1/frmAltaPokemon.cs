@@ -21,7 +21,19 @@ namespace WindowsFormsApp1
 
         private void frmAltaPokemon_Load(object sender, EventArgs e)
         {
+            //este bloque de codigo me permite traer los tipos y elementos para el desplegable directamente
+            //con los valores de la base de datos
+            ElementoDatos elementoDatos = new ElementoDatos();
+            try
+            {
+                cbTipo.DataSource = elementoDatos.listar();
+                cbDebilidad.DataSource = elementoDatos.listar();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,6 +51,8 @@ namespace WindowsFormsApp1
                 poke.Numero = int.Parse(txtNumero.Text);
                 poke.Nombre = txtNombre.Text;
                 poke.Descripcion = txtDescripcion.Text;
+                poke.Tipo = (Elemento)cbTipo.SelectedItem;
+                poke.Debilidad = (Elemento)cbDebilidad.SelectedItem;
 
                 //mandamos la info a la base de datos
                 //agrego - muestro mensaje - cierro

@@ -36,33 +36,37 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.lblDebilidad = new System.Windows.Forms.Label();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.cbDebilidad = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(164, 113);
+            this.txtNumero.Location = new System.Drawing.Point(122, 47);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 26);
+            this.txtNumero.Size = new System.Drawing.Size(261, 26);
             this.txtNumero.TabIndex = 0;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(164, 180);
+            this.txtNombre.Location = new System.Drawing.Point(122, 97);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 26);
+            this.txtNombre.Size = new System.Drawing.Size(261, 26);
             this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(164, 238);
+            this.txtDescripcion.Location = new System.Drawing.Point(122, 144);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 26);
+            this.txtDescripcion.Size = new System.Drawing.Size(261, 26);
             this.txtDescripcion.TabIndex = 2;
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(93, 116);
+            this.lblNumero.Location = new System.Drawing.Point(51, 50);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(65, 20);
             this.lblNumero.TabIndex = 3;
@@ -71,7 +75,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(93, 180);
+            this.lblNombre.Location = new System.Drawing.Point(51, 97);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 20);
             this.lblNombre.TabIndex = 4;
@@ -80,7 +84,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(66, 241);
+            this.lblDescripcion.Location = new System.Drawing.Point(24, 147);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(92, 20);
             this.lblDescripcion.TabIndex = 5;
@@ -88,7 +92,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(164, 310);
+            this.button1.Location = new System.Drawing.Point(123, 305);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 6;
@@ -98,7 +102,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(277, 310);
+            this.button2.Location = new System.Drawing.Point(236, 305);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 33);
             this.button2.TabIndex = 7;
@@ -106,11 +110,51 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(76, 195);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(39, 20);
+            this.lblTipo.TabIndex = 8;
+            this.lblTipo.Text = "Tipo";
+            // 
+            // lblDebilidad
+            // 
+            this.lblDebilidad.AutoSize = true;
+            this.lblDebilidad.Location = new System.Drawing.Point(40, 246);
+            this.lblDebilidad.Name = "lblDebilidad";
+            this.lblDebilidad.Size = new System.Drawing.Size(75, 20);
+            this.lblDebilidad.TabIndex = 9;
+            this.lblDebilidad.Text = "Debilidad";
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Location = new System.Drawing.Point(123, 192);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(260, 28);
+            this.cbTipo.TabIndex = 10;
+            // 
+            // cbDebilidad
+            // 
+            this.cbDebilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDebilidad.FormattingEnabled = true;
+            this.cbDebilidad.Location = new System.Drawing.Point(122, 243);
+            this.cbDebilidad.Name = "cbDebilidad";
+            this.cbDebilidad.Size = new System.Drawing.Size(261, 28);
+            this.cbDebilidad.TabIndex = 11;
+            // 
             // frmAltaPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 419);
+            this.Controls.Add(this.cbDebilidad);
+            this.Controls.Add(this.cbTipo);
+            this.Controls.Add(this.lblDebilidad);
+            this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDescripcion);
@@ -138,5 +182,9 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.Label lblDebilidad;
+        private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.ComboBox cbDebilidad;
     }
 }

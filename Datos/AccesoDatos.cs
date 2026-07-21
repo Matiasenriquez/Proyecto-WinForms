@@ -56,6 +56,12 @@ namespace Datos
                 throw ex;
             }
         }
+
+        public void SetParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
         public void CerrarConexion()
         {
             if (lector != null)
