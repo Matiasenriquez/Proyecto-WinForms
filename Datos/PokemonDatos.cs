@@ -27,7 +27,7 @@ namespace Datos
                 conexion.ConnectionString = "server=(localdb)\\MSSQLLocalDB; database=POKEDEX_DB; integrated security=true";
                 //6to paso: creamos la sentencia sql que quiero ejecutar y de que tipo: texto, procedimiento almacenado o enlace directo con la tabla.
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as tipo, D.Descripcion as Debilidad From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo and D.Id = P.IdDebilidad";
+                comando.CommandText = "SELECT Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as tipo, D.Descripcion as Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo and D.Id = P.IdDebilidad";
                 //donde se va a ejecutar esa conexion.
                 comando.Connection = conexion;
 
@@ -40,6 +40,7 @@ namespace Datos
                 while (lector.Read())
                 {
                     Pokemon auxiliar = new Pokemon();
+                    auxiliar.Id = (int)lector["Id"];
                     auxiliar.Numero = lector.GetInt32(0);
                     auxiliar.Nombre = (string)lector["Nombre"];
                     auxiliar.Descripcion = (string)lector["Descripcion"];
@@ -48,8 +49,10 @@ namespace Datos
                     if (!(lector["UrlImagen"] is DBNull))
                         auxiliar.UrlImagen = (string)lector["UrlImagen"];
                     auxiliar.Tipo = new Elemento();
+                    auxiliar.Tipo.Id = (int)lector["IdTipo"];
                     auxiliar.Tipo.Descripcion = (string)lector["Tipo"];
                     auxiliar.Debilidad = new Elemento();
+                    auxiliar.Debilidad.Id = (int)lector["IdDebilidad"];
                     auxiliar.Debilidad.Descripcion = (string)lector["Debilidad"];
 
                     //9no paso, agrego toda la informacion del recorrido en una lista
@@ -86,9 +89,31 @@ namespace Datos
                 datos.CerrarConexion();
             }
         }
-        public void Modificar(Pokemon modificar)
+        public void Modificar(Pokemon poke)
         {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetConsulta("update POKEMONS set Numero = @numero, Nombre = @nombre, Descripcion = @descripcion, UrlImagen = @img, IdTipo = @idTipo, IdDebilidad = @idDebilidad WHERE id = @id");
+                datos.SetParametro("@numero", poke.Numero);
+                datos.SetParametro("@nombre", poke.Nombre);
+                datos.SetParametro("@descripcion", poke.Descripcion);
+                datos.SetParametro("@img", poke.UrlImagen);
+                datos.SetParametro("@idTipo", poke.Tipo.Id);
+                datos.SetParametro("@idDebilidad", poke.Debilidad.Id);
+                datos.SetParametro("@id", poke.Id);
 
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
         }
 
     }

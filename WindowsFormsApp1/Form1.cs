@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
                 dgvPokemons.DataSource = listaPokemon;
                 //oculto la columna de Url imagen dentro del formulario
                 dgvPokemons.Columns["UrlImagen"].Visible = false;
+                dgvPokemons.Columns["Id"].Visible = false;
                 //pedir a la ia que me explique esto
                 pbxPokemon.Load(listaPokemon[0].UrlImagen);
             }
@@ -76,9 +77,16 @@ namespace WindowsFormsApp1
             Cargar();
         }
 
-        private void pbxPokemon_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            //pokemon seleccionado para modificar
+            Pokemon seleccionado;
+            seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            //invoco a mi ventana de modificar pokemons y con showdialog permite que no se pueda abrir varias ventanas
+            frmAltaPokemon modificar = new frmAltaPokemon(seleccionado);
+            modificar.ShowDialog();
+            //llamo a la funcion de cargar para que refresque la informacion del formulario.
+            Cargar();
         }
     }
 }

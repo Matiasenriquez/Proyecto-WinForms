@@ -14,9 +14,17 @@ namespace WindowsFormsApp1
 {
     public partial class frmAltaPokemon : Form
     {
+
+        private Pokemon pokemon = null;
         public frmAltaPokemon()
         {
             InitializeComponent();
+        }
+        public frmAltaPokemon(Pokemon pokemon)
+        {
+            InitializeComponent();
+            this.pokemon = pokemon;
+            Text = "Modificar Pokemon";
         }
 
         private void frmAltaPokemon_Load(object sender, EventArgs e)
@@ -27,8 +35,22 @@ namespace WindowsFormsApp1
             try
             {
                 cbTipo.DataSource = elementoDatos.listar();
+                cbTipo.ValueMember = "Id";
+                cbTipo.DisplayMember = "Descripcion";
                 cbDebilidad.DataSource = elementoDatos.listar();
+                cbDebilidad.ValueMember = "Id";
+                cbDebilidad.DisplayMember = "Descripcion";
 
+                if (pokemon != null)
+                {
+                    txtNumero.Text = pokemon.Numero.ToString();
+                    txtNombre.Text = pokemon.Nombre;
+                    txtDescripcion.Text = pokemon.Descripcion;
+                    txtUrlImagen.Text = pokemon.UrlImagen;
+                    CargarImagen(pokemon.UrlImagen);
+                    cbTipo.SelectedValue = pokemon.Tipo.Id;
+                    cbDebilidad.SelectedValue = pokemon.Debilidad.Id;
+                }
             }
             catch (Exception ex)
             {
@@ -43,23 +65,36 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Pokemon poke = new Pokemon();
             PokemonDatos datos = new PokemonDatos();
             try
             {
+                //verifico si hay o no pokemons
+                if (pokemon == null) 
+                    pokemon = new Pokemon();
+                
                 //creo mis objetos para que capturen el contenido de los textbox del formulario
-                poke.Numero = int.Parse(txtNumero.Text);
-                poke.Nombre = txtNombre.Text;
-                poke.Descripcion = txtDescripcion.Text;
-                poke.UrlImagen = txtUrlImagen.Text;
-                poke.Tipo = (Elemento)cbTipo.SelectedItem;
-                poke.Debilidad = (Elemento)cbDebilidad.SelectedItem;
+                pokemon.Numero = int.Parse(txtNumero.Text);
+                pokemon.Nombre = txtNombre.Text;
+                pokemon.Descripcion = txtDescripcion.Text;
+                pokemon.UrlImagen = txtUrlImagen.Text;
+                pokemon.Tipo = (Elemento)cbTipo.SelectedItem;
+                pokemon.Debilidad = (Elemento)cbDebilidad.SelectedItem;
 
-                //mandamos la info a la base de datos
-                //agrego - muestro mensaje - cierro
-                datos.Agregar(poke);
-                MessageBox.Show("Pokemon agregado correctamente");
+
+                if (pokemon.Id != 0)
+                {
+                    datos.Modificar(pokemon);
+                    MessageBox.Show("Pokemon modificado exitosamente");
+                }
+                else
+                {
+                    //mandamos la info a la base de datos
+                    //agrego - muestro mensaje - cierro
+                    datos.Agregar(pokemon);
+                    MessageBox.Show("Pokemon agregado correctamente");
+                }
                 Close();
+
             }
             catch (Exception ex)
             {

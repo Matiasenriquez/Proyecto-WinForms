@@ -9,6 +9,7 @@ namespace Dominio
 {
     public class Pokemon
     {
+        public int Id { get; set; }
         //anotations - permite modificar el texto que figura en las columnas sin romper la db
         [DisplayName("Número")]
         //debe colocarse arriba de cada atributo de mi objeto
