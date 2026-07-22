@@ -23,6 +23,11 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Cargar();   
+        }
+
+        private void Cargar()
+        {
             try
             {
                 //aca trabajamos con la lectura a la base de datos, ahora invocamos aca.
@@ -67,6 +72,13 @@ namespace WindowsFormsApp1
             //invoco a mi ventana de Alta pokemons y con showdialog permite que no se pueda abrir varias ventanas
             frmAltaPokemon alta = new frmAltaPokemon();
             alta.ShowDialog();
+            //llamo a la funcion de cargar para que refresque la informacion del formulario.
+            Cargar();
+        }
+
+        private void pbxPokemon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

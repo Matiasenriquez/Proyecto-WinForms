@@ -71,9 +71,10 @@ namespace Datos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetConsulta("INSERT INTO POKEMONS (Numero, Nombre, Descripcion, Activo, IdTipo, IdDebilidad) VALUES (" + nuevo.Numero +  ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1, @idTipo, @idDebilidad)");
+                datos.SetConsulta("INSERT INTO POKEMONS (Numero, Nombre, Descripcion, Activo, IdTipo, IdDebilidad, UrlImagen) VALUES (" + nuevo.Numero +  ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1, @idTipo, @idDebilidad, @urlImagen)");
                 datos.SetParametro("@idTipo", nuevo.Tipo.Id);
                 datos.SetParametro("@idDebilidad", nuevo.Debilidad.Id);
+                datos.SetParametro("@urlImagen", nuevo.UrlImagen);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)

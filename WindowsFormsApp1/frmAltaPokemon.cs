@@ -51,6 +51,7 @@ namespace WindowsFormsApp1
                 poke.Numero = int.Parse(txtNumero.Text);
                 poke.Nombre = txtNombre.Text;
                 poke.Descripcion = txtDescripcion.Text;
+                poke.UrlImagen = txtUrlImagen.Text;
                 poke.Tipo = (Elemento)cbTipo.SelectedItem;
                 poke.Debilidad = (Elemento)cbDebilidad.SelectedItem;
 
@@ -64,6 +65,22 @@ namespace WindowsFormsApp1
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            CargarImagen(txtUrlImagen.Text);
+        }
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                pbxPokemon.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxPokemon.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
         }
     }

@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{3FBDFBA6-2F3C-4686-B66F-3F8A39D870F5}|Datos\\Datos.csproj|solutionrelative:datos\\pokemondatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|c:\\users\\matia\\desktop\\curso-c#-nivel-2\\windowsformsapp1\\windowsformsapp1\\frmaltapokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|solutionrelative:windowsformsapp1\\frmaltapokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|c:\\users\\matia\\desktop\\curso-c#-nivel-2\\windowsformsapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|c:\\users\\matia\\desktop\\curso-c#-nivel-2\\windowsformsapp1\\windowsformsapp1\\frmaltapokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|solutionrelative:windowsformsapp1\\frmaltapokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|c:\\users\\matia\\desktop\\curso-c#-nivel-2\\windowsformsapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08777AE7-60B8-4E43-8608-F8064741FA28}|WindowsFormsApp1\\Pokemons.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,8 +30,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-22T12:30:32.66Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmAltaPokemon.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\frmAltaPokemon.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\frmAltaPokemon.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\frmAltaPokemon.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\frmAltaPokemon.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwDUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-22T12:54:12.599Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,22 +65,34 @@
               "RelativeDocumentMoniker": "Datos\\PokemonDatos.cs",
               "ToolTip": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\Datos\\PokemonDatos.cs",
               "RelativeToolTip": "Datos\\PokemonDatos.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAC8AAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAEwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-22T12:18:52.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "frmAltaPokemon.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\frmAltaPokemon.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\frmAltaPokemon.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\frmAltaPokemon.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WindowsFormsApp1\\frmAltaPokemon.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-22T12:54:05.969Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
               "ToolTip": "C:\\Users\\matia\\Desktop\\Curso-C#-Nivel-2\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwEMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-22T12:13:44.769Z",
+              "WhenOpened": "2026-07-22T12:39:47.322Z",
               "EditorCaption": ""
             }
           ]

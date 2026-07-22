@@ -40,6 +40,10 @@
             this.lblDebilidad = new System.Windows.Forms.Label();
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.cbDebilidad = new System.Windows.Forms.ComboBox();
+            this.lblUrlImagen = new System.Windows.Forms.Label();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
+            this.pbxPokemon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNumero
@@ -92,7 +96,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(123, 305);
+            this.button1.Location = new System.Drawing.Point(123, 362);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 6;
@@ -102,7 +106,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(236, 305);
+            this.button2.Location = new System.Drawing.Point(236, 362);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 33);
             this.button2.TabIndex = 7;
@@ -113,7 +117,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(76, 195);
+            this.lblTipo.Location = new System.Drawing.Point(76, 252);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(39, 20);
             this.lblTipo.TabIndex = 8;
@@ -122,7 +126,7 @@
             // lblDebilidad
             // 
             this.lblDebilidad.AutoSize = true;
-            this.lblDebilidad.Location = new System.Drawing.Point(40, 246);
+            this.lblDebilidad.Location = new System.Drawing.Point(40, 303);
             this.lblDebilidad.Name = "lblDebilidad";
             this.lblDebilidad.Size = new System.Drawing.Size(75, 20);
             this.lblDebilidad.TabIndex = 9;
@@ -132,25 +136,54 @@
             // 
             this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(123, 192);
+            this.cbTipo.Location = new System.Drawing.Point(123, 249);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(260, 28);
-            this.cbTipo.TabIndex = 10;
+            this.cbTipo.TabIndex = 4;
             // 
             // cbDebilidad
             // 
             this.cbDebilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDebilidad.FormattingEnabled = true;
-            this.cbDebilidad.Location = new System.Drawing.Point(122, 243);
+            this.cbDebilidad.Location = new System.Drawing.Point(122, 300);
             this.cbDebilidad.Name = "cbDebilidad";
             this.cbDebilidad.Size = new System.Drawing.Size(261, 28);
-            this.cbDebilidad.TabIndex = 11;
+            this.cbDebilidad.TabIndex = 5;
+            // 
+            // lblUrlImagen
+            // 
+            this.lblUrlImagen.AutoSize = true;
+            this.lblUrlImagen.Location = new System.Drawing.Point(25, 198);
+            this.lblUrlImagen.Name = "lblUrlImagen";
+            this.lblUrlImagen.Size = new System.Drawing.Size(87, 20);
+            this.lblUrlImagen.TabIndex = 13;
+            this.lblUrlImagen.Text = "Url Imagen";
+            // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(123, 195);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(261, 26);
+            this.txtUrlImagen.TabIndex = 3;
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
+            // 
+            // pbxPokemon
+            // 
+            this.pbxPokemon.Location = new System.Drawing.Point(401, 47);
+            this.pbxPokemon.Name = "pbxPokemon";
+            this.pbxPokemon.Size = new System.Drawing.Size(381, 348);
+            this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxPokemon.TabIndex = 14;
+            this.pbxPokemon.TabStop = false;
             // 
             // frmAltaPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 419);
+            this.ClientSize = new System.Drawing.Size(822, 480);
+            this.Controls.Add(this.pbxPokemon);
+            this.Controls.Add(this.lblUrlImagen);
+            this.Controls.Add(this.txtUrlImagen);
             this.Controls.Add(this.cbDebilidad);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.lblDebilidad);
@@ -167,6 +200,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAltaPokemon";
             this.Load += new System.EventHandler(this.frmAltaPokemon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +220,8 @@
         private System.Windows.Forms.Label lblDebilidad;
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.ComboBox cbDebilidad;
+        private System.Windows.Forms.Label lblUrlImagen;
+        private System.Windows.Forms.TextBox txtUrlImagen;
+        private System.Windows.Forms.PictureBox pbxPokemon;
     }
 }
