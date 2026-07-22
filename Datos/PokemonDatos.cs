@@ -44,7 +44,9 @@ namespace Datos
                     auxiliar.Nombre = (string)lector["Nombre"];
                     auxiliar.Descripcion = (string)lector["Descripcion"];
                     //por cada columna nueva de la db que quiera, debo agregar otro objeto.
-                    auxiliar.UrlImagen = (string)lector["UrlImagen"];
+                    //validación de datos nulos
+                    if (!(lector["UrlImagen"] is DBNull))
+                        auxiliar.UrlImagen = (string)lector["UrlImagen"];
                     auxiliar.Tipo = new Elemento();
                     auxiliar.Tipo.Descripcion = (string)lector["Tipo"];
                     auxiliar.Debilidad = new Elemento();
