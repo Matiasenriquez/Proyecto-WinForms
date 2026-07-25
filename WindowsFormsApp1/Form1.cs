@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio; //añadimos la referncia del otro proyecto para que tome la libreria de mis objetos
 using Datos;
+using System.Runtime.CompilerServices;
 
 namespace WindowsFormsApp1
 {
@@ -87,6 +88,42 @@ namespace WindowsFormsApp1
             modificar.ShowDialog();
             //llamo a la funcion de cargar para que refresque la informacion del formulario.
             Cargar();
+        }
+
+        private void btnEliminarFisico_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            Eliminar(true); 
+        }
+        private void Eliminar (bool logico = false)
+        {
+            PokemonDatos datos = new PokemonDatos();
+            Pokemon seleccionado;
+            try
+            {
+                DialogResult Respuesta = MessageBox.Show("¿Borrar fila seleccionada?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (Respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+                    if (logico)
+                    {
+                        datos.Baja(seleccionado.Id);
+                    } 
+                    datos.Eliminar(seleccionado.Id);
+                    //actualizamos la grilla con el metodo cargar luego de eliminar
+                    Cargar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

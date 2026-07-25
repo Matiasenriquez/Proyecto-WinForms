@@ -27,7 +27,7 @@ namespace Datos
                 conexion.ConnectionString = "server=(localdb)\\MSSQLLocalDB; database=POKEDEX_DB; integrated security=true";
                 //6to paso: creamos la sentencia sql que quiero ejecutar y de que tipo: texto, procedimiento almacenado o enlace directo con la tabla.
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as tipo, D.Descripcion as Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo and D.Id = P.IdDebilidad";
+                comando.CommandText = "SELECT Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as tipo, D.Descripcion as Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo and D.Id = P.IdDebilidad and P.Activo = 1";
                 //donde se va a ejecutar esa conexion.
                 comando.Connection = conexion;
 
@@ -113,6 +113,37 @@ namespace Datos
             finally
             {
                 datos.CerrarConexion();
+            }
+        }
+
+        public void Eliminar(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.SetConsulta("delete from POKEMONS where Id = @id");
+                datos.SetParametro("@id", id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void Baja (int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.SetConsulta("UPDATE POKEMONS SET Activo = 0 WHERE Id = @id");
+                datos.SetParametro("@id", id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
