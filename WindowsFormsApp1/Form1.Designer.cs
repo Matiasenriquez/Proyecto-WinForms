@@ -34,7 +34,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminarFisico = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
@@ -104,14 +104,15 @@
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
-            // btnBuscar
+            // btnFiltrar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(435, 35);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 40);
-            this.btnBuscar.TabIndex = 6;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Location = new System.Drawing.Point(435, 35);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(100, 40);
+            this.btnFiltrar.TabIndex = 6;
+            this.btnFiltrar.Text = "Buscar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // lblFiltrar
             // 
@@ -128,6 +129,8 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(342, 26);
             this.txtFiltro.TabIndex = 8;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
             // 
             // Form1
             // 
@@ -136,7 +139,7 @@
             this.ClientSize = new System.Drawing.Size(1300, 615);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lblFiltrar);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.btnModificar);
@@ -162,7 +165,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminarFisico;
         private System.Windows.Forms.Button btnBaja;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.TextBox txtFiltro;
     }

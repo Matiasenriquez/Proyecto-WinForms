@@ -37,10 +37,7 @@ namespace WindowsFormsApp1
                 //data sourse = recibe un origen de datos, luego lo mostramos en el data grid view.
                 listaPokemon = Datos.Listar();
                 dgvPokemons.DataSource = listaPokemon;
-                //oculto la columna de Url imagen dentro del formulario
-                dgvPokemons.Columns["UrlImagen"].Visible = false;
-                dgvPokemons.Columns["Id"].Visible = false;
-                //pedir a la ia que me explique esto
+                OcultarColumnas();
                 pbxPokemon.Load(listaPokemon[0].UrlImagen);
             }
             catch (Exception ex)
@@ -49,12 +46,20 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Ocurrió un error al cargar la grilla: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void OcultarColumnas()
+        {
+            //oculto la columna de Url imagen dentro del formulario
+            dgvPokemons.Columns["UrlImagen"].Visible = false;
+            dgvPokemons.Columns["Id"].Visible = false;
+        }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
         {
-            //pedir a la ia que exploque esto
-            Pokemon PokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
-            CargarImagen(PokemonSeleccionado.UrlImagen);
+            if (dgvPokemons.CurrentRow != null)
+            {
+                Pokemon PokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+                CargarImagen(PokemonSeleccionado.UrlImagen);
+            }           
         }
         //Funcion para cargar la imagen en el placeholder o picturebox del programa
         private void CargarImagen(string imagen)
@@ -124,6 +129,40 @@ namespace WindowsFormsApp1
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            //utlizamos el evento textchanged para que busque de manera instantanea segun lo que ingresa el usuario
+            List<Pokemon> ListaFiltrada = new List<Pokemon>();
+
+            string filtro = txtFiltro.Text;
+            if (filtro.Length >= 2)
+            {
+                //implementamos la función lambda en el find para encontrar un elemento comparando al contenido del text box
+                //to upper pasa todo a mayuscula la busqueda que hace el usuario para que compare todo por igual
+                ListaFiltrada = listaPokemon.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                ListaFiltrada = listaPokemon;
+            }
+
+
+            //primero inicializamos el origen de los datos en nulo para refrescar la información
+            dgvPokemons.DataSource = null;
+            dgvPokemons.DataSource = ListaFiltrada;
+            OcultarColumnas();
         }
     }
 }
