@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Datos;
+using System.IO;
+using System.Configuration;
 
 namespace WindowsFormsApp1
 {
@@ -16,6 +18,7 @@ namespace WindowsFormsApp1
     {
 
         private Pokemon pokemon = null;
+        private OpenFileDialog archivo = null;
         public frmAltaPokemon()
         {
             InitializeComponent();
@@ -93,6 +96,15 @@ namespace WindowsFormsApp1
                     datos.Agregar(pokemon);
                     MessageBox.Show("Pokemon agregado correctamente");
                 }
+
+                //guardo imagen si la levanto localmente
+                if (archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
+                {
+                    //guardo la imagen - configuro las referencias del proyecto con system.configuration 
+                    //configuro el app.config con la ubicacion para las imagenes
+                    //guardamos la imagenes de manera local
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+                }
                 Close();
 
             }
@@ -116,6 +128,18 @@ namespace WindowsFormsApp1
             catch (Exception)
             {
                 pbxPokemon.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+            }
+        }
+
+        private void btnCargarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            //verificamos que haya una imagen cargada
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                CargarImagen(archivo.FileName);
             }
         }
     }
