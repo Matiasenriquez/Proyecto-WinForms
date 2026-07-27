@@ -147,5 +147,85 @@ namespace Datos
             }
         }
 
+        public List<Pokemon> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Pokemon> lista = new List<Pokemon>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string Consulta = "SELECT Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as tipo, D.Descripcion as Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo and D.Id = P.IdDebilidad and P.Activo = 1 and ";
+                if (campo == "Número")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            Consulta += "Numero > " + filtro;
+                            break;
+                        case "Menor a":
+                            Consulta += "Numero < " + filtro;
+                            break;
+                        default:
+                            Consulta += "Numero = " + filtro;
+                            break;
+                    }
+                }
+                else if (campo == "Nombre")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            Consulta += "Nombre like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            Consulta += "Nombre like '%" + filtro + "'";
+                            break;
+                        default:
+                            Consulta += "Nombre like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            Consulta += "P.Descripcion like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            Consulta += "P.Descripcion like '%" + filtro + "'";
+                            break;
+                        default:
+                            Consulta += "P.Descripcion like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                datos.SetConsulta(Consulta);
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Pokemon auxiliar = new Pokemon();
+                    auxiliar.Id = (int)datos.Lector["Id"];
+                    auxiliar.Numero = datos.Lector.GetInt32(0);
+                    auxiliar.Nombre = (string)datos.Lector["Nombre"];
+                    auxiliar.Descripcion = (string)datos.Lector["Descripcion"];
+                    //por cada columna nueva de la db que quiera, debo agregar otro objeto.
+                    //validación de datos nulos
+                    if (!(datos.Lector["UrlImagen"] is DBNull))
+                        auxiliar.UrlImagen = (string)datos.Lector["UrlImagen"];
+                    auxiliar.Tipo = new Elemento();
+                    auxiliar.Tipo.Id = (int)datos.Lector["IdTipo"];
+                    auxiliar.Tipo.Descripcion = (string)datos.Lector["Tipo"];
+                    auxiliar.Debilidad = new Elemento();
+                    auxiliar.Debilidad.Id = (int)datos.Lector["IdDebilidad"];
+                    auxiliar.Debilidad.Descripcion = (string)datos.Lector["Debilidad"];
+                    lista.Add(auxiliar);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

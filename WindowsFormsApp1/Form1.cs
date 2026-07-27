@@ -24,7 +24,11 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Cargar();   
+            Cargar();
+            //Items del menu desplegable Campo
+            cboCampo.Items.Add("Número");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripción");
         }
 
         private void Cargar()
@@ -133,7 +137,18 @@ namespace WindowsFormsApp1
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            
+            PokemonDatos datos = new PokemonDatos();
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvPokemons.DataSource = datos.filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }            
         }
 
         private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
@@ -163,6 +178,26 @@ namespace WindowsFormsApp1
             dgvPokemons.DataSource = null;
             dgvPokemons.DataSource = ListaFiltrada;
             OcultarColumnas();
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Las opciones del menu Criterio se cargan en base al item seleccionado en el menú Campo
+            string opcion = cboCampo.SelectedItem.ToString();
+            if (opcion == "Número")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
         }
     }
 }
